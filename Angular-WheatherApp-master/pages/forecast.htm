@@ -1,0 +1,49 @@
+
+
+<a href="#/" class="btn btn-primary">Back To Home</a>
+<hr>
+
+Forecast for {{city}}
+
+<hr>
+
+<!--<div ng-repeat="w in whetherResult.list">-->
+    <!--<div class="row">-->
+        <!--<div class="col-md-12">-->
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading">-->
+                    <!--<h3 class="panel-title">{{convertDate(w.dt)  | date: 'MMM d, y - H:m:ss'}}</h3>-->
+
+                <!--</div>-->
+                <!--<div class="panel-body">-->
+                    <!--Day Time Temperarue:{{convert(w.main.temp)}} C-->
+
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<table class="table table-bordered table-hover table-responsive">
+	<thead>
+		<tr>
+			<th>Date/Time</th>
+			<th>Temp</th>
+			<th>Temp Min</th>
+			<th>Temp Max</th>
+			<th>Pressure</th>
+			<th>Humidity</th>
+		</tr>
+	</thead>
+	<tbody ng-repeat="w in whetherResult.list">
+		<tr>
+			<td>{{convertDate(w.dt)| date: 'MMM d, y - H:m:ss'}}</td>
+			<td>{{convert(w.main.temp)}}</td>
+			<td>{{convert(w.main.temp_min)}}</td>
+			<td>{{convert(w.main.temp_max)}}</td>
+			<td>{{w.main.pressure}}</td>
+			<td>{{w.main.humidity}}</td>
+		</tr>
+	</tbody>
+</table>
+
